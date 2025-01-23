@@ -1,4 +1,5 @@
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-MaterialArcMenu-green.svg?style=true)](https://android-arsenal.com/details/1/2936)
+[![](https://jitpack.io/v/sashakhail/MaterialArcMenu.svg)](https://jitpack.io/#sashakhail/MaterialArcMenu)
 
 Material Arc Menu
 =================
