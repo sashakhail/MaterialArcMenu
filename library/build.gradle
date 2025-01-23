@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.sashakhail' // Your GitHub username
-version = '0.0.7' // Version to be published
+version = '0.0.8' // Version to be published
 
 android {
     compileSdkVersion 34
@@ -23,14 +23,15 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
+            afterEvaluate {
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+                    builtBy tasks.named("assembleRelease")
+                }
+            }
+
             groupId = 'com.github.sashakhail'
             artifactId = 'MaterialArcMenu'
-            version = '0.0.7'
-
-            // Explicitly add the AAR file as the artifact
-//            artifact("$buildDir/outputs/aar/library-release.aar") {
-//                builtBy tasks.named('assembleRelease')
-//  //          }
+            version = '0.0.8'
         }
     }
 }
