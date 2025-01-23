@@ -21,7 +21,7 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
-
+import com.github.sashakhail.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -79,10 +79,10 @@ public class ArcMenu extends FrameLayout implements CoordinatorLayout.AttachedBe
             mDrawable = ContextCompat.getDrawable(getContext(), android.R.drawable.ic_dialog_email);
         }
 
-        mRippleColor = attr.getColor(R.styleable.ArcMenu_menu_ripple_color, getThemeAccentColor(getContext(), R.attr.colorControlHighlight));
+        mRippleColor = attr.getColor(R.styleable.ArcMenu_menu_ripple_color, getThemeAccentColor(getContext(), androidx.appcompat.R.attr.colorControlHighlight));
 
         if(mColorStateList == null) {
-            mColorStateList = ColorStateList.valueOf(getThemeAccentColor(getContext(), R.attr.colorAccent));
+            mColorStateList = ColorStateList.valueOf(getThemeAccentColor(getContext(), androidx.appcompat.R.attr.colorAccent));
         }
 
         switch (mMenuSideEnum) {
