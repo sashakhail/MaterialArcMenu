@@ -19,10 +19,11 @@ android {
 }
 
 dependencies {
+    implementation project(':library') // Use the library module
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation "androidx.appcompat:appcompat:1.1.0-rc01"
     implementation 'com.google.android.material:material:1.0.0'
 
-    implementation project(":library")
+
 }
