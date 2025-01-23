@@ -1,7 +1,9 @@
 jdk:
-  - openjdk11
+  - openjdk23
 
 build:
-  publications:
-    release: components.release
-  publishToMavenLocal: true
+  before_install:
+    - echo "Building library module"
+  gradle:
+    - ":library:assembleRelease"
+    - ":library:publishToMavenLocal"
