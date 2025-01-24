@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.sashakhail' // Your GitHub username
-version = '0.1.10' // Version to be published
+version = '0.1.11' // Version to be published
 
 android {
     compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 15
+        minSdkVersion 19
         targetSdkVersion 34
     }
 
@@ -22,13 +22,13 @@ android {
 
 publishing {
     publications {
-        release(MavenPublication) {
+        mavenJava(MavenPublication) {
             groupId = 'com.github.sashakhail'
             artifactId = 'MaterialArcMenu'
-            version = '0.1.10'
+            version = '0.1.11'
 
             afterEvaluate {
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+                artifact("$buildDir/outputs/aar/library-release.aar")
             }
 
             pom {
@@ -50,6 +50,9 @@ publishing {
                 }
             }
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
 
