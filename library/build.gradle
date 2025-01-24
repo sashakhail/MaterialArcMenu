@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven-publish'
 
 group = 'com.github.sashakhail' // Your GitHub username
-version = '0.1.12' // Version to be published
+version = '0.1.13' // Version to be published
 
 android {
     compileSdkVersion 34
@@ -54,8 +54,12 @@ publishing {
     repositories {
         mavenLocal()
     }
-}
 
+}
+// Ensure publish task depends on bundling the release AAR
+tasks.named('publishMavenJavaPublicationToMavenLocal').configure {
+    dependsOn tasks.named('bundleReleaseAar')
+}
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
