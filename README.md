@@ -25,7 +25,7 @@ Usage
 Add a dependency to your `build.gradle`:
 
     dependencies {
-    compile 'com.sa90.materialarcmenu:library:0.0.4'
+    implementation 'com.github.sashakhail:MaterialArcMenu:0.1.13'
 }
 
 and include the `com.sa90.materialarcmenu.ArcMenu` as a viewgroup (with the sub-menu's as child) in your layout. The menu (floating action button) has a margin of 16dp (customizable) added to it by default to follow the material design guidelines.
