@@ -23,15 +23,32 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
-            afterEvaluate {
-                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
-                    builtBy tasks.named("assembleRelease")
-                }
-            }
-
             groupId = 'com.github.sashakhail'
             artifactId = 'MaterialArcMenu'
             version = '0.0.9'
+
+            afterEvaluate {
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar")
+            }
+
+            pom {
+                name.set("MaterialArcMenu")
+                description.set("An Android custom view which allows you to have an arc-style menu on your pages.")
+                url.set("https://github.com/sashakhail/MaterialArcMenu")
+                licenses {
+                    license {
+                        name.set("Apache License 2.0")
+                        url.set("http://www.apache.org/licenses/LICENSE-2.0")
+                    }
+                }
+                developers {
+                    developer {
+                        id.set("sashakhail")
+                        name.set("Sasha Khail")
+                        email.set("sakkkkka@yahoo.com")
+                    }
+                }
+            }
         }
     }
 }

@@ -1,9 +1,10 @@
 jdk:
-  - openjdk23
+  - openjdk17
 
 build:
   before_install:
-    - echo "Building library module"
-  gradle:
-    - ":library:assembleRelease"
-    - ":library:publishToMavenLocal"
+    - echo "Preparing to build the library"
+  install:
+    - ./gradlew :library:assembleRelease
+  script:
+    - ./gradlew :library:publishToMavenLocal
